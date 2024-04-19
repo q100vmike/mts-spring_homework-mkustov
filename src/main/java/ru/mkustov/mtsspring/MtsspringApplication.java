@@ -1,0 +1,13 @@
+package ru.mkustov.mtsspring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MtsspringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MtsspringApplication.class, args);
+	}
+
+}
