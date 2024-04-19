@@ -8,7 +8,7 @@ import ru.mkustov.mtsspring.AbstractAnimal;
 import ru.mkustov.mtsspring.Dog;
 
 @Configuration
-@ConfigurationProperties("") //взять из ямла
+@ConfigurationProperties("") //взять из ямла 1:38
 public class BeanConfiguration {
     @Bean
     @Scope("prototype")
