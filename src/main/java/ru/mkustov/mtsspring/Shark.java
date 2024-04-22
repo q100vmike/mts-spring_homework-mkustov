@@ -1,16 +1,23 @@
 package ru.mkustov.mtsspring;
 
+import org.hibernate.annotations.Comment;
+import org.springframework.stereotype.Component;
+
+@Component("someShark")
 public class Shark extends Predator {
+
     public Shark() {
         super();
         name = "Shark";
         breed = "Shark";
     }
+
     public Shark(String name) {
         super();
         this.name = name;
         this.breed = "Shark";
     }
+
     @Override
     public String toString() {
         return "Shark{" +

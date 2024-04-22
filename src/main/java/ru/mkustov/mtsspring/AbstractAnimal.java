@@ -2,6 +2,7 @@ package ru.mkustov.mtsspring;
 
 
 import com.fasterxml.jackson.annotation.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -31,6 +32,11 @@ public abstract class AbstractAnimal implements Animal, Externalizable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     protected LocalDate birthDate;
 
+    private String randomName;
+
+    @Value("#{${animal.list.names}}")
+    private List<String> randomNames;
+
     public AbstractAnimal(String breed, String name, Double cost) {
         this.breed = breed;
         this.name = name;
@@ -39,6 +45,7 @@ public abstract class AbstractAnimal implements Animal, Externalizable {
             setSecretInfo();
         }
     }
+
     public AbstractAnimal(String breed, String name, Double cost, String character, String secretInfo, LocalDate birthDate) {
         this.breed = breed;
         this.name = name;
@@ -171,5 +178,11 @@ public abstract class AbstractAnimal implements Animal, Externalizable {
 
     public static String decryptString(String data) {
         return new String(Base64.getDecoder().decode(data));
+    }
+
+    public void setRrandomName() {
+        Random  r = new Random();
+        int index = r.nextInt(randomNames.size());
+        randomName = randomNames.get(index);
     }
 }

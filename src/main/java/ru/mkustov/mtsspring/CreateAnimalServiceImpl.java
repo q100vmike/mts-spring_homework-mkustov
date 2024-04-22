@@ -1,11 +1,30 @@
 package ru.mkustov.mtsspring;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.util.*;
 
+@Component("animalList")
 public class CreateAnimalServiceImpl implements CreateAnimalService{
-    public Map<String, List<Animal>> createAnimal(int n) throws IOException {
+
+    @Value("${animal.list.default}")
+    public int val;
+
+    //@Value("${animal.list.names}")
+    @Value("#{${animal.list.names}}")
+    public List<String> names;
+
+    public Map<String, List<Animal>> animals;
+
+    public void testVal (int n) {
+        System.out.println("n= " + n);
+    }
+
+    public Map<String, List<Animal>> createAnimal(@Value("${animal.list.default}") int n) throws IOException {
         Map<String, List<Animal>> animalsMap = new HashMap<>();
         Random  r = new Random();
         List<Animal> animal = new ArrayList<>(n);
@@ -37,6 +56,7 @@ public class CreateAnimalServiceImpl implements CreateAnimalService{
 
         return animalsMap;
     }
+
     @Override
     public Map<String, List<Animal>> createAnimal() throws IOException {
         Map<String, List<Animal>> animalsMap = new HashMap<>();

@@ -1,5 +1,9 @@
 package ru.mkustov.mtsspring;
 
+import org.hibernate.annotations.Comment;
+import org.springframework.stereotype.Component;
+
+@Component("someDog")
 public class Dog extends Pet {
     public Dog() {
         super();
