@@ -1,16 +1,16 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.servises;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import ru.mkustov.mtsspring.animals.AbstractAnimal;
+import ru.mkustov.mtsspring.interfaces.Animal;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.time.LocalDate;
 import java.util.*;
 
 public class SaveToFile {

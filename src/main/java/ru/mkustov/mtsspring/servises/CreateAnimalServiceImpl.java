@@ -1,15 +1,17 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.servises;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import ru.mkustov.mtsspring.animals.*;
+import ru.mkustov.mtsspring.interfaces.Animal;
+import ru.mkustov.mtsspring.interfaces.CreateAnimalService;
 
 import java.io.IOException;
 import java.util.*;
 
 @Component("animalList")
-public class CreateAnimalServiceImpl implements CreateAnimalService{
+public class CreateAnimalServiceImpl implements CreateAnimalService {
 
     @Value("${animal.list.default}")
     public int val;

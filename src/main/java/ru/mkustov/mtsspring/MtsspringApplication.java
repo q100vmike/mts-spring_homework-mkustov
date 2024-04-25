@@ -1,16 +1,13 @@
 package ru.mkustov.mtsspring;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.mkustov.mtsspring.animals.AbstractAnimal;
 import ru.mkustov.mtsspring.config.BeanConfiguration;
 import ru.mkustov.mtsspring.config.RandomName;
-
-import java.text.Annotation;
+import ru.mkustov.mtsspring.servises.CreateAnimalServiceImpl;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class MtsspringApplication {

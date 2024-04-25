@@ -1,4 +1,9 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.interfaces;
+
+import ru.mkustov.mtsspring.animals.Cat;
+import ru.mkustov.mtsspring.animals.Dog;
+import ru.mkustov.mtsspring.animals.Shark;
+import ru.mkustov.mtsspring.animals.Wolf;
 
 import java.io.IOException;
 import java.util.*;

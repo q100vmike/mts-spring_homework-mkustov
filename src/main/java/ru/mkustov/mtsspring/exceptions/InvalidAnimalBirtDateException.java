@@ -1,4 +1,4 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.exceptions;
 
 public class InvalidAnimalBirtDateException extends Exception {
     public InvalidAnimalBirtDateException(String[] message) {

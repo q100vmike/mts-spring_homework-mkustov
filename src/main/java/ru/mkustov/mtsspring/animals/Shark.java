@@ -1,6 +1,5 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.animals;
 
-import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 
 @Component("someShark")

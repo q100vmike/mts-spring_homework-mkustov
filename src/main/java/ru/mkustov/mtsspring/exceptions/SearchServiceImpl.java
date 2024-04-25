@@ -1,4 +1,7 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.exceptions;
+
+import ru.mkustov.mtsspring.animals.AbstractAnimal;
+import ru.mkustov.mtsspring.interfaces.SearchService;
 
 import java.time.LocalDate;
 

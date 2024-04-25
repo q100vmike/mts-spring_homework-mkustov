@@ -22,9 +22,4 @@ public class RandomName {
         int index = r.nextInt(randomNames.size());
         return randomNames.get(index);
     }
-/*    public void  RandomName() {
-        Random r = new Random();
-        int index = r.nextInt(randomNames.size());
-        randomName = randomNames.get(index);
-    }*/
 }

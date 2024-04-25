@@ -1,8 +1,10 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.animals;
 
 
 import com.fasterxml.jackson.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
+import ru.mkustov.mtsspring.exceptions.InvalidAnimalBirtDateException;
+import ru.mkustov.mtsspring.interfaces.Animal;
 
 import java.io.Externalizable;
 import java.io.IOException;

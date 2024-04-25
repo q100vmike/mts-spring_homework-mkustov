@@ -1,4 +1,7 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.interfaces;
+
+import ru.mkustov.mtsspring.animals.AbstractAnimal;
+import ru.mkustov.mtsspring.exceptions.InvalidAnimalBirtDateException;
 
 import java.time.LocalDate;
 import java.util.List;

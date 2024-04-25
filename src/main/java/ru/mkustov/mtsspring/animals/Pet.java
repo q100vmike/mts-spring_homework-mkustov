@@ -1,4 +1,4 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.animals;
 
 import java.time.LocalDate;
 

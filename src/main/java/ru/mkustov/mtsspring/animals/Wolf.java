@@ -1,11 +1,6 @@
-package ru.mkustov.mtsspring;
+package ru.mkustov.mtsspring.animals;
 
-import org.hibernate.annotations.Comment;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Map;
 
 @Component("someWolf")
 public class Wolf extends Predator {
