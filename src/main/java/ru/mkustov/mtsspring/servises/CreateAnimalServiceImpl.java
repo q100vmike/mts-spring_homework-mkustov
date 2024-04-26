@@ -16,11 +16,11 @@ import java.util.*;
 @Service("createAnimalList")
 public class CreateAnimalServiceImpl implements CreateAnimalService {
 
-    @Value("${animal.list.default}")
+    @Value("${animals.list.default}")
     public int val;
 
-    //@Value("${animal.list.names}")
-    @Value("#{${animal.list.names}}")
+    @Value("${animals.list.names}")
+   // @Value("#{${animal.list.names}}")
     public List<String> names;
 
     public Map<String, List<Animal>> animals;
@@ -32,7 +32,7 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
         return animals;
     }
 
-    public Map<String, List<Animal>> createAnimal(@Value("${animal.list.default}") int n) throws IOException {
+    public Map<String, List<Animal>> createAnimal(@Value("${animals.list.default}") int n) throws IOException {
         Map<String, List<Animal>> animalsMap = new HashMap<>();
         Random  r = new Random();
         List<Animal> animal = new ArrayList<>(n);

@@ -13,7 +13,8 @@ public class RandomName {
 
     private String randomName;
 
-    @Value("#{${animal.list.names}}")
+    //@Value("#{  {animal.list.names}}") //для пропертиз
+    @Value("${animals.list.names}")
     private List<String> randomNames;
 
     public RandomName() {

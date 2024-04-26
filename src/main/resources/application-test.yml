@@ -1,0 +1,4 @@
+animals:
+  list:
+    names: one, two, three, four, five, six
+    default: 1000

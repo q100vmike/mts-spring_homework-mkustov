@@ -36,7 +36,8 @@ public abstract class AbstractAnimal implements Animal, Externalizable {
 
     private String randomName;
 
-    @Value("#{${animal.list.names}}")
+    //@Value("#{${animal.list.names}}") //для пропертиз
+    @Value("${animals.list.names}")
     private List<String> randomNames;
 
     public AbstractAnimal(String breed, String name, Double cost) {
