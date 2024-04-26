@@ -1,12 +1,14 @@
 package ru.mkustov.mtsspring.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Random;
 
-@Component("rndname")
+//@Component("rndname")
+//@Scope("prototype")
 public class RandomName {
 
     private String randomName;

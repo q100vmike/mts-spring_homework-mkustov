@@ -1,16 +1,19 @@
 package ru.mkustov.mtsspring.servises;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.mkustov.mtsspring.animals.*;
+import ru.mkustov.mtsspring.config.RandomName;
 import ru.mkustov.mtsspring.interfaces.Animal;
 import ru.mkustov.mtsspring.interfaces.CreateAnimalService;
 
 import java.io.IOException;
 import java.util.*;
 
-@Component("animalList")
+@Service("createAnimalList")
 public class CreateAnimalServiceImpl implements CreateAnimalService {
 
     @Value("${animal.list.default}")
@@ -22,8 +25,11 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
 
     public Map<String, List<Animal>> animals;
 
-    public void testVal (int n) {
-        System.out.println("n= " + n);
+    @Autowired
+    private RandomName randomName;
+
+    public Map<String, List<Animal>> getAnimals() {
+        return animals;
     }
 
     public Map<String, List<Animal>> createAnimal(@Value("${animal.list.default}") int n) throws IOException {
@@ -32,19 +38,22 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
         List<Animal> animal = new ArrayList<>(n);
 
         for (int i = 0; i < n; i++) {
-            int animalType = r.nextInt(3);
+
+            String name = randomName.getRandomName();
+
+            int animalType = r.nextInt(5);
             switch (animalType) {
                 case 0:
-                    animal.add(new Cat());
+                    animal.add(new Cat(name));
                     break;
                 case 1:
-                    animal.add(new Dog());
+                    animal.add(new Dog(name));
                     break;
                 case 2:
-                    animal.add(new Shark());
+                    animal.add(new Shark(name));
                     break;
                 default:
-                    animal.add(new Wolf());
+                    animal.add(new Wolf(name));
             }
             String animalName = animal.get(i).getName();
             if (!animalsMap.containsKey(animalName)) {
@@ -55,7 +64,7 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
             //## дз 1 use custom
             SaveToFile.saveAmimal((AbstractAnimal) animal.get(i));
         }
-
+        animals = animalsMap;
         return animalsMap;
     }
 
